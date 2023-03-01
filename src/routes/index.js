@@ -7,6 +7,8 @@ const routes = new Router();
 // ------ unauthenticated routes------------------------
 routes.post("/user", UserController.craete);
 routes.post("/loguin", UserController.loguin);
+routes.post("/forgot-password", UserController.forgotPassword);
+routes.post("/reset-password", UserController.resetPassword);
 
 // ------ authenticated routes--------------------------
 routes.use(authMiddleware);
