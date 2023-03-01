@@ -55,7 +55,7 @@ class UserController {
     }
   }
 
-  async craete(req, res) {
+  async create(req, res) {
     try {
       const schema = Yup.object().shape({
         name: Yup.string()
