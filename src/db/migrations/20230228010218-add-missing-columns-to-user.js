@@ -1,7 +1,5 @@
 "use strict";
 
-const { types } = require("pg");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -9,7 +7,7 @@ module.exports = {
       queryInterface.addColumn("Users", "reset_password_token", {
         type: Sequelize.STRING,
       }),
-      queryInterface.addColumn("Users", "reset_password_token_sent-at", {
+      queryInterface.addColumn("Users", "reset_password_token_sent_at", {
         type: Sequelize.DATE,
       }),
       queryInterface.addColumn("Users", "avatar_url", {
