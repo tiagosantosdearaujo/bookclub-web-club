@@ -6,10 +6,10 @@ class AuthorController {
     try {
       const schema = Yup.object().shape({
         name: Yup.string()
-          .required("Name is mandatory.")
-          .min(3, "Name must be at least 6 characters.."),
-        avatar_url: Yup.string().required("Avatar url is mandatory."),
-        bio: Yup.string().required("Bio is mandatory"),
+          .required("Nome é obrigatório.")
+          .min(3, "Nome deve conter mais de 3 caracteres."),
+        avatar_url: Yup.string().required("Avatar url é obrigatório."),
+        bio: Yup.string().required("Bio é obrigatória."),
       });
 
       await schema.validate(req.body);
@@ -44,7 +44,7 @@ class AuthorController {
       console.log({ id });
 
       if (!id) {
-        return res.status(400).json({ error: "Id Author is mandatory." });
+        return res.status(400).json({ error: "Id do autor é obrigatório." });
       }
 
       const author = await Author.findByPk(Number(id), {
@@ -57,7 +57,7 @@ class AuthorController {
       });
 
       if (!author) {
-        return res.status(404).json({ error: "Author not found." });
+        return res.status(404).json({ error: "Autor não encontrado." });
       }
 
       return res.json(author);

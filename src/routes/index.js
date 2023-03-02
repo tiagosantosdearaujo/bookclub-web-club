@@ -19,12 +19,14 @@ routes.post("/reset-password", UserController.resetPassword);
 routes.use(authMiddleware);
 
 routes.get("/user", UserController.get);
+routes.put("/user", UserController.update);
+routes.put("/user/avatar", UserController.updateAvatar);
 
 routes.get("/category", CategoryController.getAll);
 
 routes.post("/author", AuthorController.create);
-routes.post("/author", AuthorController.getAll);
-routes.post("/author", AuthorController.get);
+routes.get("/author", AuthorController.getAll);
+routes.get("/author/:id", AuthorController.get);
 
 routes.post("/book", BookController.create);
 routes.get("/book", BookController.findAll);

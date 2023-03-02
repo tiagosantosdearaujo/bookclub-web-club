@@ -51,7 +51,7 @@ class BookController {
       const where = {};
 
       if (highlighted) {
-        where.highlighted = true;
+        where.highlighted = highlighted;
       }
 
       if (category_id) {

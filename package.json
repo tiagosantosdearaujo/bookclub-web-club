@@ -10,6 +10,7 @@
   "author": "Tiago Araujo",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1326.0",
     "bcrypt": "^5.1.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
